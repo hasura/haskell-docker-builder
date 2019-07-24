@@ -8,6 +8,7 @@ RUN apt-get -y update \
  && cp -L --parents -t . /lib/x86_64-linux-gnu/libgcc_s.so.1 \
  && cp -L --parents -t . /usr/lib/x86_64-linux-gnu/gconv/UTF-* \
  && cp -L --parents -t . /usr/lib/x86_64-linux-gnu/gconv/gconv-modules* \
+ && cp -Lr --parents -t . /usr/lib/locale/C.UTF-8 \
  && cp -L /etc/protocols rootfs/etc/ \
  && apt-get -y purge netbase \
  && apt-get -y auto-remove \
