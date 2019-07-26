@@ -12,4 +12,7 @@ build:
 	docker build . -t '$(HASKELL_BUILDER_TAG)' \
 		--build-arg busybox_builder="$$(cat $$image_id_file)"
 
-.PHONY: build
+push: build
+	docker push '$(HASKELL_BUILDER_TAG)'
+
+.PHONY: build push
